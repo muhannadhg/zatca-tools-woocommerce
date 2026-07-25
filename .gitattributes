@@ -1,0 +1,8 @@
+# Authored on Windows, consumed on Linux hosts — normalise to LF in the repo so
+# the PHP ships with the endings WordPress servers expect, and so GitHub's
+# licence detector can match LICENSE (CRLF made it fail to recognise GPL-2.0).
+* text=auto eol=lf
+
+*.png binary
+*.webp binary
+*.zip binary
