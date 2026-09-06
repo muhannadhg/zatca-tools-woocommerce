@@ -9,7 +9,7 @@ A WooCommerce plugin that turns every paid order into a **Saudi Phase 2 complian
 
 **Free.** The plugin is GPL, and the [ZATCA Tools](https://zatcatools.com) account it connects to is free — no card.
 
-📘 **Setup guide (Arabic):** https://zatcatools.com/docs/woocommerce
+📘 **Setup guide (Arabic):** https://zatcatools.com/docs/woocommerce?utm_source=github&utm_medium=readme&utm_campaign=woocommerce
 
 ---
 
@@ -22,6 +22,16 @@ A WooCommerce plugin that turns every paid order into a **Saudi Phase 2 complian
 - Puts the invoice number and a PDF download link in order emails, the thank-you page and My Account
 - Ships an admin dashboard with a VAT setup check and per-order invoice status
 - **Refuses to invoice an order that did not actually carry 15% VAT**, instead of inventing tax
+
+## Common questions
+
+**Does the store need an accounting system for ZATCA Phase 2?** No. ZATCA validates the invoice file — signature, hash chain, QR, delivery to the Fatoora platform — not the software that made it. The plugin produces that file for every paid order; accounting stays wherever it is today.
+
+**Which orders become standard (B2B) invoices?** Orders of SAR 1,000+ where the buyer entered a valid VAT number at checkout are cleared as standard tax invoices; everything else is a simplified invoice reported within 24 hours.
+
+**Can I test without a real VAT number?** Yes — the account's trial mode runs the same onboarding against ZATCA's sandbox (test VAT `399999999900003`, OTP `123345`), so orders on a staging store produce real signed test invoices.
+
+**An invoice was rejected — what does the code mean?** The order note shows ZATCA's rule code. Explanations and fixes: [zatcatools.com/docs/errors](https://zatcatools.com/docs/errors?utm_source=github&utm_medium=readme&utm_campaign=woocommerce).
 
 ## Requirements
 
@@ -37,7 +47,7 @@ Without VAT on the order there is nothing to invoice — the plugin will tell yo
 
 ## Install
 
-Download the latest release, then **Plugins → Add New → Upload Plugin**. Or clone straight into your plugins directory:
+The plugin is on WordPress.org — **Plugins → Add New → search "ZATCA Tools"**, or open [wordpress.org/plugins/e-invoicing-saudi-arabia-by-zatca-tools](https://wordpress.org/plugins/e-invoicing-saudi-arabia-by-zatca-tools/). Otherwise download the latest release, then **Plugins → Add New → Upload Plugin**. Or clone straight into your plugins directory:
 
 ```bash
 git clone https://github.com/muhannadhg/zatca-tools-woocommerce.git wp-content/plugins/zatca-tools
